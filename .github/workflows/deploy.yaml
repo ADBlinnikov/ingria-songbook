@@ -35,4 +35,4 @@ jobs:
           access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Deploy to S3
-        run: s3cmd --host=storage.yandexcloud.net --host-bucket =%(bucket)s.storage.yandexcloud.net sync public s3://www.ingria-songbook.ru/
+        run: s3cmd --host=storage.yandexcloud.net --host-bucket='%(bucket)s.storage.yandexcloud.net' sync public s3://www.ingria-songbook.ru/
