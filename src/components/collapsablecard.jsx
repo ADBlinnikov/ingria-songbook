@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CollapsableCard = ({ children }) => {
+const CollapsableCard = ({ children, header="Ноты" }) => {
   const [state, setState] = useState(false);
 
   const toggle = () => {
@@ -11,13 +11,8 @@ const CollapsableCard = ({ children }) => {
     <section class="section">
       <div class="container">
         <div class="card is-fullwidth">
-          <header class="card-header">
-            <p class="card-header-title">Ноты</p>
-            <button className="card-header-icon" onClick={toggle}>
-              <span className="icon">
-                <i class="fa fa-angle-down" />
-              </span>
-            </button>
+          <header class="card-header" onClick={toggle}>
+            <p class="card-header-title">{ header }</p>
           </header>
           <div class={`card-content ${state ? "is-hidden": ""}`}>
             <div class="content">

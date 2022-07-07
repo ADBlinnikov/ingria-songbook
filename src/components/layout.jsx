@@ -5,9 +5,10 @@ import Navbar from "./navbar";
 import Author from "./author";
 import Abcjs from "./abcjs";
 import CollapsableCard from "./collapsablecard";
-import "./layout.scss";
+import Verses from "./verses";
+import Tabs from "./tabs";
 
-const shortcodes = { Author, Verse, Abcjs, CollapsableCard };
+const shortcodes = { Author, Verse, Verses, Abcjs, CollapsableCard, Tabs };
 
 const Layout = ({ children }) => {
   return (

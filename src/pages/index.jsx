@@ -5,20 +5,28 @@ import Layout from "../components/layout";
 const IndexPage = () => {
   return (
     <Layout>
-      <div className="has-text-centered">
-        <div className="title">Сборник песен Церкви Ингрии</div>
-        <div className="block">
-          <div>Пока здесь можно:</div>
-          <ul className="block">
-            <li>
-              <Link to="/hymns/">Выбрать гимны по оглавлению</Link>
-            </li>
-            <li>
-              <Link to="/playbook/">Составить список гимнов</Link>
-            </li>
-          </ul>
+      <section class="hero is-small is-primary has-text-centered">
+        <div class="hero-body">
+          <p class="title">Сборник песен Церкви Ингрии</p>
         </div>
-      </div>
+        <div class="hero-foot">
+          <nav class="tabs is-centered">
+              <ul>
+                <li>
+                  <Link to="/hymns/">Оглавление</Link>
+                </li>
+                <li>
+                  <Link to="/playbook/">Свой плейлист</Link>
+                </li>
+              </ul>
+          </nav>
+        </div>
+      </section>
+      <section class="hero is-small is-warning has-text-centered">
+        <div class="hero-body">
+          <p class="subtitle">Находится в разработке</p>
+        </div>
+      </section>
     </Layout>
   );
 };
