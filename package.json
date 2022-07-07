@@ -13,7 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "aws s3 --endpoint-url=https://storage.yandexcloud.net sync public s3://www.ingria-songbook.ru/"
+    "deploy": "ycs3 sync public s3://www.ingria-songbook.ru/"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
