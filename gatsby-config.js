@@ -1,9 +1,5 @@
-module.exports = {
-  siteMetadata: {
-    title: `Ingria Songbook`,
-    siteUrl: `http://www.ingria-songbook.ru.website.yandexcloud.net`
-  },
-  plugins: [
+const conditionalPlugins = () => {
+  var plugins = [
     "gatsby-plugin-mdx",
     {
       resolve: 'gatsby-plugin-manifest',
@@ -36,8 +32,19 @@ module.exports = {
         },
         // More options defined here https://purgecss.com/configuration.html#options
       },
-    },
-    "gatsby-plugin-perf-budgets",
-    "gatsby-plugin-webpack-bundle-analyser-v2",
-  ]
+    }
+  ] 
+  if (process.env.NODE_ENV === 'dev') {
+    plugins.push("gatsby-plugin-webpack-bundle-analyser-v2")
+  }
+
+  return plugins
+}
+
+module.exports = {
+  siteMetadata: {
+    title: `Ingria Songbook`,
+    siteUrl: `http://www.ingria-songbook.ru.website.yandexcloud.net`
+  },
+  plugins: conditionalPlugins()
 };
